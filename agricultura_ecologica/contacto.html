@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <div class="infoicon">
+            <p><strong>Síguenos</strong><br>+ info</p>
+            <div class="iconos">
+                <a href="https://www.facebook.com" target="_blank"><img src="img/img_cabecera_footer/facebook.png"
+                        alt="logotipo Facebook"></a>
+                <a href="https://www.x.com" target="_blank"><img src="img/img_cabecera_footer/X.png"
+                        alt="logotipo X"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="img/img_cabecera_footer/instagram.png"
+                        alt="logotipo Instagram"></a>
+            </div>
+        </div>
+        <img src="img/img_cabecera_footer/LOGO_CABECERA.png" alt="logo Agricultura Ecológica" class="logo">
+        <h1>II Congreso de Agricultura Ecológica</h1>
+        <div class="fecha">
+            <p>15 - 16 mayo, 2025</p>
+            <p>Valencia</p>
+        </div>
+        <div class="plantas"><img src="img/img_cabecera_footer/planta1.svg" alt="dibujo planta 1"
+                class="planta planta1"><img src="img/img_cabecera_footer/planta2.svg" alt="dibujo planta 2"
+                class="planta planta2"></div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="index.html#tematicas">Áreas Temáticas</a></li>
+            <li><a href="index.html#comite">Comité Organizador</a></li>
+            <li><a href="index.html#patrocinadores">Patrocinadores</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="contacto">
+            <h2>Contacto</h2>
+            <div class="contact">
+                <form action="https://localhost/action_page.php" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ\s]{3,}$"
+                        placeholder="Introduce tu nombre" required>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" minlength="10" placeholder="Escribe tu mensaje aquí"
+                        required></textarea>
+                    <label for="asunto">Asunto:</label>
+                    <select name="asunto" id="asunto" required>
+                        <option value="" selected disabled>Seleccione una opción</option>
+                        <option value="info_general">Información General</option>
+                        <option value="inscripciones">Inscripciones</option>
+                        <option value="patrocinio">Patrocinio</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <input type="submit" value="Enviar mensaje" class="submit">
+                </form>
+                <section class="ubicacion">
+                    <h3>Ubicación</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.495076872935!2d-0.3410958!3d39.4807342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60487c5d604077%3A0x150fdf31fdc5a6f6!2sUniversit%C3%A9%20polytechnique%20de%20Valence!5e0!3m2!1sfr!2ses!4v1744617028193!5m2!1sfr!2ses"
+                        width="480" height="430" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a href="https://www.google.es/maps/place/Valencia+Polytechnic+University/@39.4807383,-0.3436707,17z/data=!3m1!4b1!4m6!3m5!1s0xd60487c5d604077:0x150fdf31fdc5a6f6!8m2!3d39.4807342!4d-0.3410958!16zL20vMDY2OGQw?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank">Ver en Google Maps</a>
+                </section>
+            </div>
+        </section>
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros asistentes</h2>
+            <div class="reviews">
+                <div>
+                    <p>"El congreso fue una experiencia increíble. Aprendí mucho sobre agricultura ecológica y conocí a
+                        grandes profesionales del sector."</p>
+                    <p class="testimonio">- María López, Ingeniera Agrónoma</p>
+                </div>
+                <div>
+                    <p>"Eventos como este son esenciales para el futuro de la sostenibilidad agrícola. ¡Volveré el
+                        próximo año!"</p>
+                    <p class="testimonio">- Javier Ruiz, Productor ecológico</p>
+                </div>
+                <div>
+                    <p>"Aprender de expertos y compartir ideas en este congreso ha sido fundamental para mi carrera."
+                    </p>
+                    <p class="testimonio">- Alejandro Gómez, Investigador</p>
+                </div>
+            </div>
+        </section>
+        <section class="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="details">
+                <details>
+                    <summary>¿Dónde se celebrará el congreso?</summary>
+                    <p>El congreso se llevará a cabo en la Universidad Politécnica de Cartagena, Murcia.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo puedo inscribirme</summary>
+                    <p>Puedes inscribirte a través del formulario en la sección de inscripción de nuestra web.</p>
+                </details>
+                <details>
+                    <summary>¿Habrá opción de streaming?</summary>
+                    <p>Sí, algunas sesiones estarán disponibles en línea. Consulta el programa para más detalles.</p>
+                </details>
+            </div>
+        </section>
+        <section class="mainfinal">
+            <div class="final">
+                <h2>Congreso Agricultura Ecológica</h2>
+                <h3>Agricultura respuetuosa, por y para todos</h3>
+                <img src="img/img_cabecera_footer/logoinf1.png" alt="Logo" class="logofinal">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>Valencia, España</p>
+            <p>Teléfono: +34 9632548745</p>
+            <p>Email: <a href="mailto:info@agroeco.com" class="email">info@agroeco.com</a></p>
+        </address>
+        <div class="redes">
+            <a href="https://www.facebook.com" target="_blank"><img src="img/img_cabecera_footer/facebook.png"
+                    alt="logotipo Facebook"></a>
+            <a href="https://www.x.com" target="_blank"><img src="img/img_cabecera_footer/X.png" alt="logotipo X"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="img/img_cabecera_footer/instagram.png"
+                    alt="logotipo Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img src="img/img_cabecera_footer/linkedin.png"
+                    alt="logotipo Linkedin"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Inscripción</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabeceralogo">
+            <div class="titulo">
+                <h1>II Jornadas de Micología</h1>
+                <h5><a href="https://es.wikipedia.org/wiki/Soria" target="_blank">Soria</a>, 10 y 11 de Noviembre de
+                    2024</h5>
+            </div>
+            <img src="img/logo_hongo.png" alt="Dibujo de un hongo." class="logohongo">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="programación.html">Programación</a></li>
+            <li><a href="inscripción.html" class="actual">Registro</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="formulario">
+            <h2>Registro a las II Jornadas de Micología</h2>
+            <form action="https://localhost/action_page.php" method="POST">
+                <h3>Datos personales</h3>
+                <fieldset>
+                    <label for="dni">DNI:</label><br>
+                    <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}" placeholder="12345678Z"
+                        title="Por favor, introduce un DNI válido" required><br>
+                    <label for="nombre">Nombre completo:</label><br>
+                    <input type="text" id="nombre" name="nombre" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{10,128}$"
+                        minlength="10" maxlength="128"
+                        title="Introduce un nombre válido (solo letras y mínimo 10 caracteres)" required><br>
+                    <label for="email">Correo electrónico</label><br>
+                    <input type="email" id="email" name="email" placeholder="you@example.com"
+                        title="Introduce un correo electrónico válido" required><br>
+                    <label for="phone">Teléfono:</label><br>
+                    <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{9,15}$" placeholder="+34666666666"
+                        title="Introduce un teléfono válido (9-15 dígitos, con o sin prefijo internacional)"
+                        required><br>
+                </fieldset>
+                <h3>Intereses en las jornadas</h3>
+                <fieldset>
+                    <legend>¿Qué talleres te interesan?<span class="required">*</span></legend>
+                    <div class="checkbox">
+                        <input type="checkbox" id="taller1" name="taller1" value="diversidad hongos">
+                        <label for="taller1">Diversidad de hongos</label><br>
+                        <input type="checkbox" id="taller2" name="taller2" value="aplicaciones prácticas">
+                        <label for="taller2">Hongos y sus aplicaciones prácticas</label><br>
+                        <input type="checkbox" id="taller3" name="taller3" value="observación hongos">
+                        <label for="taller3">Taller práctico: Observación de hongos</label><br>
+                        <input type="checkbox" id="taller4" name="taller4" value="micología medica">
+                        <label for="taller4">Micología médica</label><br>
+                        <input type="checkbox" id="taller5" name="taller5" value="micología ambiental">
+                        <label for="taller5">Micología ambiental</label><br>
+                        <input type="checkbox" id="taller6" name="taller6" value="avances estudio hongos">
+                        <label for="taller6">Avances en el estudio de hongos</label><br>
+                        <input type="checkbox" id="taller7" name="taller7"
+                            value="identificación hongos comestibles/tóxicos">
+                        <label for="taller7">Identificación de hongos comestibles y tóxicos</label>
+                    </div>
+                </fieldset>
+                <label for="motivo" class="motivo">Motivo de participación<span class="required">*</span></label><br>
+                <textarea name="motivo" id="motivo" rows="5" required></textarea><br>
+                <label for="fecha" class="fecha">Fecha de asistencia:<span class="required">*</span></label><br>
+                <select name="fecha" id="fecha" required>
+                    <option value="" selected disabled>Elige una fecha</option>
+                    <option value="10/11/24">10 de noviembre</option>
+                    <option value="11/11/24">11 de noviembre</option>
+                    <option value="ambos">Ambos días</option>
+                </select><br>
+                <input type="checkbox" id="condiciones" name="condiciones" value="aceptar condiciones" required>
+                <label for="condiciones">He leído y acepto las condiciones de participación <span
+                        class="required">*</span></label>
+                <input type="submit" value="Enviar registro" class="button">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>Actividad realizada por <strong>Ely Kee</strong>, para la asignatura de Lenguajes de Marcas</p>
+            <p>1º Trimestre Curso 2024/25</p>
+        </div>
+    </footer>
+</body>
+
+</html>

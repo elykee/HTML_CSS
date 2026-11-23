@@ -1,0 +1,996 @@
+/* Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    /*limite de ancho para pantallas más grandes que 1920 px de anche */
+}
+
+
+/* Encabezado */
+header {
+    height: 60vh;
+    background-image: url('../img/img_cabecera_footer/cebada.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+.infoicon {
+    position: relative;
+    left: 9.5%;
+    top: 9.5%;
+    max-width: 90.5%;
+}
+
+.infoicon p {
+    font-size: 0.9em;
+    font-weight: 600;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.iconos {
+    display: inline-block;
+}
+
+.iconos>a {
+    margin-right: 5px;
+}
+
+.logo {
+    position: relative;
+    left: 9.5%;
+    top: 15%;
+    width: 10rem;
+}
+
+h1 {
+    position: relative;
+    top: 16%;
+    text-align: center;
+    color: #FFF;
+    padding-left: 10%;
+    font-size: 1.8rem;
+}
+
+.fecha {
+    color: #2E7D32;
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    background-color: #FFF;
+    padding: 12px 126px 12px 12px;
+    position: relative;
+    left: 9.5%;
+    top: 24%;
+}
+
+.plantas {
+    display: flex;
+    position: absolute;
+    right: 1.3%;
+    bottom: 0;
+}
+
+.planta {
+    opacity: 0;
+    transform-origin: bottom;
+    animation: popsup 2s ease-out forwards;
+    /* forwards para que se mantenga la imagen una vez terminada la animación*/
+}
+
+.planta1 {
+    animation-delay: 0.2s;
+}
+
+.planta2 {
+    animation-delay: 0.5s;
+}
+
+
+/* Menú de Navegación */
+nav {
+    width: 100%;
+    background-color: #2E7D32;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+nav ul {
+    padding: 5px 0;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    /*para poder aplicar hover a la a y no al li, ya que  el hover en el li provoca un overflow y hacía que el background-image del header parpadee o se distorsione*/
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in;
+}
+
+
+/* Main */
+main {
+    background-color: #F0F8EC;
+}
+
+h2 {
+    color: #256D27;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/*Para poder controlar el subrayado y que fuese más uniforme en todos los h2*/
+h2::after {
+    content: "";
+    display: block;
+    border-bottom: solid 5px #FF9100;
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+h3,
+h4 {
+    text-align: center;
+}
+
+
+/* index.html */
+/* Sección info */
+#info {
+    scroll-margin-top: 40px;
+    padding-top: 35px;
+}
+
+.text {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info img {
+    width: 18%;
+}
+
+.text p {
+    padding-left: 70px;
+    text-align: justify;
+    text-justify: inter-word;
+    flex-basis: 40%;
+    font-size: 1.1rem;
+}
+
+/* Sección agenda */
+#agenda {
+    margin-top: 35px;
+    text-align: center;
+}
+
+#agenda>div {
+    padding: 15px 0;
+}
+
+#agenda p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#agenda a {
+    color: blue;
+}
+
+#agenda .descarga {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #2E7D32;
+}
+
+#agenda .descarga:hover {
+    background-color: #256D27;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Sección áreas temáticas */
+#tematicas {
+    scroll-margin-top: 40px;
+    margin-top: 35px;
+    padding: 20px 0;
+    background-color: #2E7D32;
+}
+
+#tematicas h2 {
+    color: #000;
+    /*color cambiado, por legibilidad*/
+    padding-top: 20px;
+}
+
+.temas {
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    gap: 12px;
+    place-content: center;
+    margin: 20px 0;
+}
+
+.temas>div {
+    color: #FFF;
+    background-color: #C8E6C9;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Sección comité */
+
+#comite {
+    scroll-margin-top: 60px;
+    margin-top: 35px;
+}
+
+.miembros {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 35px 1fr 1fr 35px;
+    width: 70%;
+    gap: 20px;
+}
+
+.miembros>div {
+    background-color: #E8F5E9;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    padding: 10px;
+}
+
+.miembros img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+    justify-self: end;
+}
+
+.miembros .presidenta {
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.miembros .presidenta p {
+    grid-column: 2 / 3;
+    justify-self: end;
+}
+
+.miembros .presidenta img {
+    grid-column: 3 / 4;
+    justify-self: start;
+}
+
+/* Sección patrocinadores */
+#patrocinadores {
+    scroll-margin-top: 60px;
+    margin-top: 70px;
+}
+
+.patros {
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    place-content: center;
+    gap: 30px 200px;
+    padding-top: 15px;
+}
+
+.patros>div {
+    place-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.patros img {
+    width: 40%;
+}
+
+.patros a {
+    text-decoration: none;
+    color: #2E7D32;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.divider {
+    height: 40px;
+    width: 3px;
+    background-color: #000;
+}
+
+/* Sección final */
+.mainfinal {
+    margin-top: 75px;
+    height: 55vh;
+    background-image: url('../img/img_cabecera_footer/cebada.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.mainfinal h2 {
+    font-size: 2.15rem;
+    color: #000;
+}
+
+.mainfinal h2::after {
+    display: none;
+}
+
+.mainfinal h3 {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 1.23rem;
+}
+
+.logofinal {
+    width: 25em;
+    padding-top: 20px;
+}
+
+.final {
+    position: relative;
+    top: 31.5%;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    color: #FFF;
+    background-color: #2E7D32;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 30px 0;
+}
+
+address {
+    font-style: unset;
+    text-align: center;
+}
+
+.email {
+    color: #FFF;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.redes img,
+.iconos img {
+    width: 1.65rem;
+    height: 1.65rem;
+    object-fit: cover;
+}
+
+
+/* agenda.html */
+/* Ponentes */
+.agenda h2 {
+    font-size: 2.4rem;
+    padding: 35px 0;
+}
+
+.agenda h2::after {
+    display: none;
+}
+
+.agenda h4 {
+    color: #256D27;
+    font-weight: 600;
+    font-size: 1.74rem;
+    padding-bottom: 50px;
+}
+
+.agenda h3 {
+    color: #256D27;
+    font-size: 1.74rem;
+}
+
+.ponentes {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(5, 1fr);
+    place-content: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ponentes>a {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 15px;
+}
+
+hr {
+    grid-column: span 5;
+    border: 0.05px solid #c1c1c1;
+    margin-top: 100px;
+}
+
+#verTodo {
+    grid-column: span 5;
+}
+
+.ponente {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+    background-size: 172%;
+}
+
+.ponentes .noponente div {
+    background-color: #c1c1c1;
+}
+
+#p1>div {
+    background-image: url('../img/img_agenda/ponente1.jpeg');
+}
+
+#p2>div {
+    background-image: url('../img/img_agenda/ponente2.jpeg');
+}
+
+#p3>div {
+    background-image: url('../img/img_agenda/ponente3.jpeg');
+}
+
+#p4>div {
+    background-image: url('../img/img_agenda/ponente4.jpeg');
+}
+
+.ponentes a:not(:target) {
+    transform: scale(0.75);
+    transition: transform 0.5s ease-in-out;
+}
+
+.ponentes a:target {
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.ponentes a.noponente {
+    transform: scale(1);
+}
+
+/* Tablas*/
+.tabla1,
+.tabla2 {
+    padding-top: 50px;
+}
+
+.tabla2 {
+    padding-bottom: 75px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 8px;
+    font-size: 1.25rem;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 10px 100px 10px 10px;
+}
+
+th {
+    background-color: #C8E6C9;
+    color: #256D27;
+    text-align: left;
+}
+
+.col25 {
+    width: 25%;
+}
+
+.col75 {
+    width: 75%;
+}
+
+#p1:target~#verTodo tbody tr:not([data-ponente="p1"]),
+#p2:target~#verTodo tbody tr:not([data-ponente="p2"]),
+#p3:target~#verTodo tbody tr:not([data-ponente="p3"]),
+#p4:target~#verTodo tbody tr:not([data-ponente="p4"]) {
+    display: none;
+}
+
+#p1:target~#verTodo tr[data-ponente="p1"],
+#p2:target~#verTodo tr[data-ponente="p2"],
+#p3:target~#verTodo tr[data-ponente="p3"],
+#p4:target~#verTodo tr[data-ponente="p4"],
+#verTodo:target tbody tr,
+#dia1:target tbody tr,
+#dia2:target tbody tr {
+    animation: popsup 1s ease-in-out;
+    transform-origin: bottom;
+}
+
+
+/* contacto.html */
+/* Seccion contacto */
+.contacto {
+    padding-top: 35px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 20px;
+    place-content: center;
+    max-width: 60rem;
+    padding-top: 35px;
+    margin: 0 auto;
+}
+
+form,
+.ubicacion {
+    background-color: #E8F5E9;
+    border-radius: 8px;
+}
+
+form {
+    display: grid;
+    place-items: center;
+    align-self: start;
+    padding: 15px;
+}
+
+.ubicacion {
+    padding: 25px 25px 15px;
+    text-align: center;
+}
+
+iframe {
+    padding: 15px 0;
+    width: 100%;
+}
+
+label {
+    color: #2E7D32;
+    font-weight: 600;
+    padding: 12px 0;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.submit {
+    background-color: #2E7D32;
+    color: #fff;
+    padding: 10px 15px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 12px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #256D27;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#asunto {
+    background-color: #e9e9ed;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+    border: 2.5px solid #2E7D32;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border: 2.5px solid #FF0000;
+}
+
+/* Seccion testimonios */
+.testimonios {
+    background-color: #F0F8EC;
+    position: relative;
+    overflow: hidden;
+    width: 65%;
+    margin: 0 auto;
+    padding: 35px 0;
+    border-radius: 8px;
+}
+
+.testimonios::after {
+    position: absolute;
+    content: "";
+    bottom: 45%;
+    left: -5%;
+    border-radius: 50%;
+    height: 255px;
+    width: 255px;
+    background-color: #C8E6C9;
+}
+
+.reviews>div:hover {
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.reviews>div {
+    border-radius: 8px;
+    background-color: #FFF;
+    font-style: italic;
+    z-index: 1;
+    width: 30%;
+    padding: 20px 20px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.testimonio {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Seccion FAQ */
+
+.faq {
+    margin-top: 35px;
+}
+
+.details {
+    width: 40%;
+    padding-top: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+details {
+    background-color: #E8F5E9;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+
+}
+
+summary {
+    color: #256D27;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+details:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+
+}
+
+
+/* KEYFRAMES & MEDIA QUERIES */
+/* Keyframe para las plantas y las filas de la tabla */
+@keyframes popsup {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* Keyframes para el logo de la cabecera al reducirse el ancho a menos de 768px*/
+@keyframes slide {
+    0% {
+        left: 9.5%;
+    }
+
+    100% {
+        left: calc(90.5% - 9rem);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Media query para pantallas menos de 2560px */
+@media only screen and (min-width: 1920.1px) and (max-width:2560px) {
+    header {
+        height: 52vh;
+    }
+
+    .mainfinal {
+        height: 40vh;
+    }
+}
+
+/* Media query para pantallas menos de 1024px */
+@media only screen and (max-width:1024px) {
+
+    /* index.html*/
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .miembros {
+        grid-template-columns: 80px 1fr 80px;
+        width: 83%;
+        gap: 20px;
+    }
+
+    .miembros>div {
+        grid-column: 2 / 3;
+    }
+
+    .miembros .presidenta {
+        grid-template-columns: 80px 2fr 1fr 80px;
+        grid-column: 1 / 4;
+        gap: 20px;
+    }
+
+    .miembros .presidenta p {
+        grid-column: 2 / 3;
+        justify-self: end;
+    }
+
+    .miembros .presidenta img {
+        grid-column: 3 / 4;
+        justify-self: start;
+    }
+
+    .patros {
+        grid-template-columns: 1fr;
+    }
+
+    .patros img {
+        width: 15%;
+    }
+
+    .patros a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media query para pantallas menos de 768px */
+@media only screen and (max-width:768px) {
+
+    /* header */
+    .infoicon p {
+        display: none;
+    }
+
+    .plantas {
+        transform: scale(0.5);
+        bottom: -8%;
+    }
+
+    .logo {
+        animation: slide 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards, spin 3s linear 4s infinite;
+    }
+
+    /* nav */
+    nav ul li {
+        display: block;
+        padding: 5px;
+    }
+
+    /* main */
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    /* index.html*/
+    #info,
+    #tematicas {
+        scroll-margin-top: 170px;
+    }
+
+    #info img {
+        width: 30%;
+        padding: 20px 0;
+    }
+
+    .text {
+        flex-direction: column;
+    }
+
+    .text>p {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 0 25px;
+    }
+
+    #agenda>div p {
+        font-size: 1.3rem;
+    }
+
+    #agenda>div a {
+        font-size: 1.05rem;
+    }
+
+    #agenda .descarga {
+        font-size: 1.05rem;
+    }
+
+    .temas {
+        grid-template-columns: 1fr;
+    }
+
+    .temas>div {
+        font-size: 1.2rem;
+        border-radius: unset;
+    }
+
+    #comite,
+    #patrocinadores {
+        scroll-margin-top: 210px;
+    }
+
+    .patros>div {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .patros>div a {
+        font-size: 1em;
+        font-weight: 600;
+        padding: 0;
+    }
+
+    .mainfinal {
+        background-image: none;
+    }
+
+    .logofinal {
+        display: none;
+    }
+
+    .mainfinal {
+        background-color: #F0F8EC;
+        height: 28vh;
+    }
+
+    .final h2 {
+        color: #2E7D32;
+    }
+
+    .final h3 {
+        color: #000;
+    }
+
+    /* agenda.html*/
+    .ponentes {
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 95%;
+    }
+
+    .ponentes>a {
+        border-radius: 15px;
+        border: 1px solid #c1c1c1;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 12px 0;
+    }
+
+    hr {
+        grid-column: auto;
+    }
+
+    #verTodo {
+        grid-column: auto;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody,
+    tr,
+    td {
+        display: block;
+        border: none;
+    }
+
+    table {
+        display: block;
+        border: 1px solid #c1c1c1;
+        font-size: 1rem;
+    }
+
+    td::before {
+        content: attr(data-column-name);
+    }
+
+    tr:nth-child(even) {
+        background-color: #a0c09f;
+    }
+
+    /* contacto.html*/
+    .contact {
+        grid-template-columns: 1fr;
+        padding: 15px 10px;
+        gap: 35px;
+    }
+
+    .testimonios,
+    .faq {
+        display: none;
+    }
+
+}

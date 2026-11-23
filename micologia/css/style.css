@@ -1,0 +1,516 @@
+/* Generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #4a772f;
+    background-color: #f3f3eb;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+h2,
+h3,
+h5 {
+    text-align: center;
+}
+
+
+/* Encabezado */
+
+header {
+    color: #fff;
+    background-color: #4a772f;
+    background-image: url("../img/imagen_decorativa.png");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: repeat-x;
+    padding: 1.5rem 0;
+}
+
+.cabeceralogo {
+    overflow: hidden;
+    max-width: 80rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cabeceralogo .titulo {
+    float: left;
+    width: 65%;
+}
+
+.logohongo {
+    max-width: 266px;
+    width: 35%;
+    /*para que al reducir la ventana el logo no salte abajo, responsive design */
+    float: right;
+}
+
+h1 {
+    font-size: 2.8rem;
+    text-align: right;
+}
+
+h5 {
+    font-size: 1.3rem;
+    color: #adc4a4;
+    padding-top: 1rem;
+    text-align: right;
+}
+
+h5 a {
+    text-decoration: none;
+    color: #adc4a4;
+}
+
+h5:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.portada-programa .titulo {
+    padding: 22px 0;
+    width: 100%;
+}
+
+.portada-programa h1,
+.portada-programa h5 {
+    text-align: center;
+}
+
+.portada-programa h1 {
+    padding-top: 1rem;
+}
+
+
+/* Menú navegación */
+
+nav {
+    background-color: #8db174;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li {
+    padding: 1rem;
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+nav a:hover {
+    background-color: #4a772f;
+    transition: 0.5s ease;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.actual {
+    border-bottom: solid white;
+}
+
+
+/* Contenido Principal */
+
+main {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80rem;
+    /*limitación para pantallas grandes*/
+}
+
+
+/* Seccciones */
+
+.video,
+.importante,
+.actividades,
+.programa,
+.programa-detalle,
+.formulario {
+    background-color: #e5e0d3;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+}
+
+.programa {
+    padding-bottom: 30px;
+}
+
+.importante,
+.programa {
+    background-color: #f9f8f4;
+}
+
+.importante,
+.actividades {
+    overflow: hidden;
+    /* overflow:hidden hace que estos padres envuelvan a sus hijos de float, para que no se salgan de ellos. */
+    display: inline-block;
+    width: 100%;
+}
+
+.importante li,
+.importante p,
+.programa th,
+.programa tr,
+.programa-detalle ul,
+.formulario form {
+    color: #4d4d4d;
+}
+
+.programa-detalle h3,
+.formulario h3 {
+    padding: 20px 0;
+}
+
+
+/* PÁGINA INDEX */
+/* Sección video */
+
+.video table {
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.video td {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+/* Sección importante */
+
+.importante div {
+    float: left;
+    width: 50%;
+    padding-top: 50px;
+}
+
+.importante h2 {
+    font-size: 1.9rem;
+}
+
+.importante ul {
+    padding-top: 10px;
+    padding-left: 35px;
+}
+
+.importante li {
+    padding: 5px 0;
+    line-height: 1.5rem;
+}
+
+.importante p {
+    padding: 15px 25px 0;
+    font-size: 1.3rem;
+}
+
+.link {
+    color: #4a772f;
+    text-decoration: none;
+}
+
+.preguntas {
+    position: relative;
+    /* Hace que el position absolute del elemento hijo, se contenga en el padre y no salte al body */
+    padding-bottom: 8px;
+    text-align: left;
+    font-size: 1.9rem;
+    font-weight: 900;
+}
+
+.preguntas::after {
+    /* Para crear el subrayado animado debajo del título */
+    content: '';
+    /* es obligatorio para ::after y ::before. aquí lo dejamos vacío porque solo queremos pintar la línea, pero puedes poner texto */
+    background: #8bb174;
+    transition: width 0.3s ease-out;  /* anima el ancho de la línea */
+    position: absolute;  /* sacar del flow del documento y que no afecte la posición de otros elementos */
+    bottom: 0;
+    /* se alínee abajo */
+    left: 0;
+    /* empieza en la izquierda */
+    width: 0;
+    /* oculta línea al inicio */
+    height: 4px;
+    /* grosor de la línea */
+}
+
+.preguntas:hover::after {
+    /* Una vez pasando el ratón encima, vemos el efecto de subrayado */
+    width: 98%;
+}
+
+
+/* Sección actividades */
+.figures {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.actividades figure {
+    margin: 1.5%;
+    float: left;
+    width: 22%;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.actividades img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.actividades figure:nth-child(5) {
+    clear: both;
+}
+
+.actividades figcaption {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+}
+
+figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* PÁGINA PROGRAMACIÓN */
+/* Sección programa */
+
+.programa h2 {
+    text-transform: uppercase;
+}
+
+.programa table {
+    font-size: 0.8rem;
+    width: 100%;
+    border: 1px solid #d0dfc7;
+    border-collapse: collapse;
+}
+
+dt {
+    font-weight: 600;
+}
+
+dd {
+    margin-left: 30px;
+}
+
+.programa table,
+.programa th,
+.programa td {
+    margin-top: 20px;
+    padding: 3px 20px;
+}
+
+.programa td:nth-of-type(1) {
+    text-align: center;
+}
+
+.programa tr,
+.programa td {
+    border: 1px solid #d0dfc7;
+}
+
+.programa thead {
+    background-color: #8bb174;
+}
+
+tr:nth-child(even) {
+    background-color: #8bb1746e;
+}
+
+td:nth-of-type(3) {
+    background-color: #fff;
+}
+
+#fechora {
+    width: 10%;
+}
+
+#taller {
+    width: 25%;
+}
+
+#col4 {
+    width: 30%;
+}
+
+tbody th {
+    background-color: #fff;
+}
+
+
+/* Seccion programa-detalle*/
+
+.programa-detalle {
+    width: 100%;
+}
+
+.wrapper {
+    font-size: 0;
+    /* todo se borra */
+    /*Es un pequño hack que he encontrado investigando un poco. Más explicación en la memoria.*/
+}
+
+.dia {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding: 0 0.7%;
+    font-size: initial;
+    /* reaparecen los divs */
+}
+
+.programa-detalle li {
+    font-weight: bold;
+    padding-bottom: 20px;
+    list-style-type: none;
+}
+
+.dia ul li ul {
+    padding-left: 80px;
+}
+
+.dia ul li ul li {
+    list-style-type: square;
+    padding-bottom: 0;
+    font-weight: initial;
+}
+
+.dia .nobullet {
+    padding-left: 40px;
+}
+
+.dia .nobullet li {
+    list-style-type: none;
+}
+
+
+/* PÁGINA INSCRIPCIÓN */
+/* Sección formulario */
+
+.formulario {
+    padding-bottom: 0;
+}
+
+.formulario form {
+    font-weight: bold;
+}
+
+.formulario h3 {
+    color: #4a772f;
+}
+
+fieldset {
+    border: 0;
+}
+
+input,
+textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#motivo {
+    resize: vertical;
+}
+
+label {
+    padding-bottom: 4px;
+    display: inline-block;
+    /* para que el padding se tenga en cuenta en los labels */
+}
+
+.checkbox {
+    padding: 8px 20px 15px;
+    width: 100%;
+    border: .1px solid rgb(255, 255, 255, 0.4);
+    margin: 5px 0 15px;
+}
+
+.checkbox label {
+    padding-bottom: 24px;
+    /* personalizar el padding inferior de los labels del grupo .checkbox */
+}
+
+select {
+    border-radius: 5px;
+    padding: 1px 2px 1px;
+    margin-bottom: 15px;
+}
+
+.checkbox input,
+input#condiciones {
+    width: unset;
+}
+
+/* Le damos un ancho sólo a estos inputs de tipo checkbox y sobreescribimos el 90% aplicado inicialmente a todos los inputs */
+
+.required {
+    text-decoration: underline dotted;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border: #FF6347 solid 2px;
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+    border: #4CAF50 solid 2px;
+}
+
+.button {
+    width: 100%;
+    background-color: #4a772f;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 25px;
+}
+
+.button:hover {
+    background-color: #8bb174;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Pié de página */
+
+footer {
+    background-color: #4a772f;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
